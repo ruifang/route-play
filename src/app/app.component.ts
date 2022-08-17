@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'route-play';
+  result = '';
+  constructor(private service: AppService) { 
+    this.result = service.resultPage;
+  }
+
+  onChange() {
+    this.service.resultPage = this.result;
+    console.log('set to: '+ this.service.resultPage);
+  }
 }
