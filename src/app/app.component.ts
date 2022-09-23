@@ -12,9 +12,7 @@ export class AppComponent {
   result = '';
   constructor(private service: AppService, private router: Router, private route: ActivatedRoute) {
     this.result = service.resultPage;
-    this.router.events.pipe(
-      filter(e=>e instanceof NavigationEnd)
-    ).subscribe(e=>{
+    this.router.events.pipe(filter((e) => e instanceof NavigationEnd)).subscribe((e) => {
       console.log(`---------${JSON.stringify(route.snapshot.firstChild?.data)}-----------`);
     });
   }
@@ -25,6 +23,6 @@ export class AppComponent {
   }
 
   async seeResult() {
-    await this.router.navigate(['/result']);
+    await this.router.navigate(['/result'], { state: { test: 'mytest string' } });
   }
 }

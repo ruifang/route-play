@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ResultResolver } from './result.resolver';
 import { ResultGuard } from './results/result.guard';
+import { ResultService } from './results/result.service';
 
 const routes: Routes = [
   
@@ -17,7 +18,8 @@ const routes: Routes = [
     canMatch: [ResultGuard],
     resolve: {
       data: ResultResolver
-    }
+    },
+    providers: [ResultService]
   },
   {
     path: 'result',
@@ -30,7 +32,8 @@ const routes: Routes = [
     canMatch: [ResultGuard],
     resolve: {
       data: ResultResolver
-    }
+    },
+    providers: [ResultService]
   },
   {
     path: 'page',

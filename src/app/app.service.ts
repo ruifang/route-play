@@ -11,6 +11,6 @@ export class AppService {
 
   getCurrentResult(): Observable<string> {
     console.log('getting result');
-    return this.http.get('https://httpbin.org/delay/3').pipe(map((x) => this.resultPage));
+    return this.http.get('https://httpbin.org/delay/1').pipe(map((x) => this.resultPage));
   }
 }

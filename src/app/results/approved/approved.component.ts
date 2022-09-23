@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ResultService } from '../result.service';
 
 @Component({
   selector: 'app-approved',
@@ -10,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ApprovedComponent implements OnInit {
 
-  constructor() { }
+  constructor(service: ResultService) { }
 
   ngOnInit(): void {
   }

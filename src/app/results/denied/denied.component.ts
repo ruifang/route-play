@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ResultService } from '../result.service';
 
 @Component({
   selector: 'app-denied',
@@ -10,7 +11,7 @@ import { CommonModule } from '@angular/common';
 })
 export class DeniedComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: ResultService) { }
 
   ngOnInit(): void {
   }
