@@ -7,8 +7,11 @@ import { AppService } from '../app.service';
   providedIn: 'root',
 })
 export class ResultGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad, CanMatch {
-  constructor(private service: AppService) {}
+  constructor(private service: AppService, private snapshot: ActivatedRouteSnapshot) {}
   canMatch(route: Route, segments: UrlSegment[]): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+
+    console.log('matching', route.path);
+
     return this.service.getCurrentResult().pipe(
       map((result) => {
         const type = route.data?.['type'] || '';
