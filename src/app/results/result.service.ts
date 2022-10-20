@@ -4,6 +4,6 @@ import { Injectable } from '@angular/core';
 export class ResultService {
 
   constructor() { 
-    console.log('result service ctor');
+    console.log('result service ctor-----------------------------------------------');
   }
 }

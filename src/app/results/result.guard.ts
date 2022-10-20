@@ -3,11 +3,11 @@ import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, CanDeactivate, C
 import { map, Observable } from 'rxjs';
 import { AppService } from '../app.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class ResultGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad, CanMatch {
-  constructor(private service: AppService, private snapshot: ActivatedRouteSnapshot) {}
+  constructor(private service: AppService) {
+    console.log('result guard ctor-----------------------------------------------');
+  }
   canMatch(route: Route, segments: UrlSegment[]): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
 
     console.log('matching', route.path);

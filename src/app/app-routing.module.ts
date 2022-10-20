@@ -19,7 +19,7 @@ const routes: Routes = [
     resolve: {
       data: ResultResolver
     },
-    providers: [ResultService]
+    providers: [ResultService, ResultGuard]
   },
   {
     path: 'result',
@@ -33,7 +33,7 @@ const routes: Routes = [
     resolve: {
       data: ResultResolver
     },
-    providers: [ResultService]
+    providers: [ResultService, ResultGuard]
   },
   {
     path: 'page',
